@@ -98,8 +98,8 @@ module RailsERD
     def relationships_mapping
       @relationships_mapping ||= {}.tap do |mapping|
         relationships.each do |relationship|
-          (mapping[relationship.source.name] ||= []) << relationship
-          (mapping[relationship.destination.name] ||= []) << relationship
+          relationship.source and ((mapping[relationship.source.name] ||= []) << relationship)
+          relationship.destination and ((mapping[relationship.destination.name] ||= []) << relationship)
         end
       end
     end
