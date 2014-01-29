@@ -6,7 +6,7 @@ module RailsERD
     # Describes an entity's attribute. Attributes correspond directly to
     # database columns.
     class Attribute
-      TIMESTAMP_NAMES = %w{created_at created_on updated_at updated_on} # @private :nodoc:
+      TIMESTAMP_NAMES = %w{created_at created_on updated_at updated_on creator_id updater_id deleter_id deleted_at} # @private :nodoc:
 
       class << self
         def from_model(domain, model) # @private :nodoc:
